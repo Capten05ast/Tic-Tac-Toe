@@ -1,0 +1,243 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    contain: content;
+}
+
+nav {
+    background-color: rgb(121, 24, 124);
+    color: white;
+    height: 70px;
+    font-size: 23px;
+    font-family: 'Anta';
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    /* This is to remove dots from the list items */
+}
+
+.gameContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: grid;
+    position: relative;
+    grid-template-rows: repeat(3, 14vw);
+    grid-template-columns: repeat(3, 12.8vw);
+    font-family: 'Anta';
+
+    padding: 1vw;
+}
+
+/* 
+container only contains X, X, X...
+grid makes it looks like this 
+X X X
+X X X
+X X X
+
+grid-template-columns: repeat(3, 10vw);
+This means 3 by 3
+*/
+
+.box {
+    border: 2px solid black;
+    font-size: 8vw; 
+    /* for making responsive we have used vw */
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.2vw;
+}
+
+.box:hover {
+    background-color: rgb(189, 148, 228);
+}
+
+
+
+
+
+/* GAME INFORMATION */
+.gameInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2vw, 2vw;
+    font-family: 'Anta';
+
+    margin-top: 5vw;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2vw;
+}
+
+.gameInfo h1 {
+    display: flex;
+
+    font-size: 26px;
+    margin-bottom: 3vw;
+    justify-content: center;
+    flex-direction: column;
+
+    gap:2rem;
+    align-items: center;
+    flex-direction: column;
+    margin-left: auto;
+    padding: 2px;
+}
+.info {
+    font-size: 20px;
+}
+
+
+
+
+
+/* RESET BUTTON */
+#reset {
+
+    margin: 0 23px;
+    padding: 9px 20px;
+    background: #c784e9;
+    border-radius: 6px;
+    cursor:pointer;
+    font-family: "Anta";
+    font-size: 19px;
+    font-weight: bolder;
+}
+#reset:hover {
+    background: #578fb8;
+}
+
+
+
+
+
+/* IMAGE PIKACHU */
+.imgbox img {
+    /* height: 20vw;
+    width: 18vw; */
+
+    margin-top: 1vw;
+    width: 0;
+    height: 300px;
+    transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+    justify-content: center;
+    text-align: center;
+}
+
+
+
+
+
+.br-0 {
+    border-right: 0;
+}
+.bl-0 {
+    border-left: 0;
+}
+.bt-0 {
+    border-top: 0;
+}
+.bb-0 {
+    border-bottom: 0;
+}
+.yes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+/* ANIMATING LINE */
+.line {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    background-color: rgb(124, 38, 124);
+    width: 0%;
+    height: 0.9vw;
+    position: absolute;
+    z-index: 5; /* Corrected */
+    left: 0; 
+    border-radius: 50px;
+
+    transition: width 1s ease-in-out;
+}
+
+
+
+
+
+/* MAKING IT RESPONSIVE */
+@media screen and (max-width: 800px)
+{
+    .gameContainer {
+        flex-wrap: wrap;
+    }
+    .gameInfo {
+        margin-top: 34px;
+    }
+
+    .imgbox img {
+        /* height: 20vw;
+        width: 18vw; */
+    
+        margin-top: 1vw;
+        width: 0;
+        height: 250px;
+        transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+
+
+
+
+/* MAKING IT RESPONSIVE FOR EXTRA SMALL SCREEN*/
+@media screen and (max-width: 480px) {
+
+    /* .container {
+        display: grid;
+        margin-top: 30px;
+        grid-template-rows: repeat(3, 20vw);
+        grid-template-columns: repeat(3, 20vw);
+        font-family: 'Anta';
+    
+        padding: 1vw;
+    } */
+
+    .gameInfo h1 {
+        font-size: 1.2rem;
+    }
+
+    .imgbox img {
+        /* height: 20vw;
+        width: 18vw; */
+    
+        margin-top: 1vw;
+        width: 0;
+        height: 250px;
+
+        transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+        justify-content: center;
+        text-align: center;
+    }
+
+}
